@@ -7,8 +7,8 @@
 [![Rye](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/rye/main/artwork/badge.json)](https://rye.astral.sh)
 
 A Python package for reformatting and accessing demand, solar, and wind time series data used by the Australian Energy
-Market Operator in their Integrated System Plan (ISP) modelling study. Currently, the trace parser only data in the
-format of the 2024 ISP.
+Market Operator in their Integrated System Plan (ISP) modelling study. Currently, the trace parser only supports data in
+the format of the 2024 ISP.
 
 ## Table of contents
 
@@ -36,7 +36,7 @@ pip install isp-trace-parser
    the data is saved in half-yearly chunks in parquet files, which significantly improves read from disk speeds. For
    further information (via the API docs) you can run `help` in the Python console, e.g. `help(parse_wind_traces)`.
 2. Query the parsed data using the naming conventions for generators, REZs, and subregions established in the
-   IASR workbook using the `get_data` functions, see the [Querying parsed trace data](https://github.com/Open-ISP/isp-trace-parser#querying-parsed-trace-data).
+   IASR workbook using the `get_data` functions, see [Querying parsed trace data](https://github.com/Open-ISP/isp-trace-parser#querying-parsed-trace-data).
    For further information on querying run `help` in the Python console, e.g.
   `help(solar_project_trace_single_reference_year)`.
 
@@ -176,7 +176,7 @@ print(mapping)
 ### Dataframe trace parsing
 
 isp-trace-parse also exposes functionality for transforming trace data, as a polars DataFrame, from AEMO format to
-"Datetime" and "Values" format. The polar package also provides functionality for converting to and from pandas if
+"Datetime" and "Values" format. The polars package also provides functionality for converting to and from pandas if
 required.
 
 ```python
@@ -210,10 +210,13 @@ print(trace_formatter(aemo_format_data))
 
 ## Contributing
 
-Interested in contributing to the source code or adding table configurations? Check out the [contributing instructions](https://github.com/Open-ISP/isp-trace-parser/blob/main/CONTRIBUTING.md), which also includes steps to install `package_name` for development.
+Interested in contributing to the source code? Check out the [contributing instructions](https://github.
+com/Open-ISP/isp-trace-parser/blob/main/CONTRIBUTING.md), which also include steps to install `isp-trace-parser` for
+development.
 
 Please note that this project is released with a [Code of Conduct](https://github.com/Open-ISP/isp-trace-parser/blob/main/CONDUCT.md). By contributing to this project, you agree to abide by its terms.
 
 ## License
 
-`package_name` was created as a part of the [OpenISP project](https://github.com/Open-ISP). It is licensed under the terms of [GNU GPL-3.0-or-later](https://github.com/Open-ISP/isp-trace-parser/blob/main/LICENSE) licences.
+`isp-trace-parser` was created as a part of the [OpenISP project](https://github.com/Open-ISP). It is licensed under
+the terms of [GNU GPL-3.0-or-later](https://github.com/Open-ISP/isp-trace-parser/blob/main/LICENSE) licences.
